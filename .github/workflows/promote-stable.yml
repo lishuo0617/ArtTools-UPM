@@ -1,0 +1,77 @@
+name: Promote stable update channels
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Immutable release tag to promote, for example v1.2.0
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  validate-and-promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out requested release
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_tag }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate UPM package
+        run: python .github/scripts/validate_package.py
+
+      - name: Verify release identity and prevent rollback
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        run: |
+          git fetch origin stable:refs/remotes/origin/stable || true
+          python - <<'PY'
+          import json
+          import os
+          import re
+          import subprocess
+
+          tag = os.environ["RELEASE_TAG"]
+          match = re.fullmatch(r"v(\d+)\.(\d+)\.(\d+)", tag)
+          if not match or tag == "v1.1.0":
+              raise SystemExit("release_tag must be an immutable semantic version tag newer than v1.1.0")
+
+          package_version = json.load(open("package.json", encoding="utf-8"))["version"]
+          if package_version != tag[1:]:
+              raise SystemExit(f"package version {package_version} does not match {tag}")
+
+          try:
+              stable_manifest = subprocess.check_output(
+                  ["git", "show", "origin/stable:package.json"], text=True
+              )
+          except subprocess.CalledProcessError:
+              stable_manifest = ""
+
+          if stable_manifest:
+              stable_version = json.loads(stable_manifest)["version"]
+              version_key = lambda value: tuple(map(int, value.split(".")))
+              if version_key(package_version) < version_key(stable_version):
+                  raise SystemExit(
+                      f"refusing rollback from stable {stable_version} to {package_version}"
+                  )
+
+          print(f"Promotion verified: {tag}")
+          PY
+
+      - name: Promote stable and legacy video URL
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git push --force origin "$GITHUB_SHA:refs/heads/stable"
+          git tag -f -a v1.1.0 "$GITHUB_SHA" -m "Legacy Art Tools rolling update channel"
+          git push --force origin refs/tags/v1.1.0
