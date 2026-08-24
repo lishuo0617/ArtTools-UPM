@@ -72,6 +72,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git push --force origin "$GITHUB_SHA:refs/heads/stable"
-          git tag -f -a v1.1.0 "$GITHUB_SHA" -m "Legacy Art Tools rolling update channel"
+          release_commit="$(git rev-parse HEAD)"
+          git push --force origin "$release_commit:refs/heads/stable"
+          git tag -f -a v1.1.0 "$release_commit" -m "Legacy Art Tools rolling update channel"
           git push --force origin refs/tags/v1.1.0
