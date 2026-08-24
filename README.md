@@ -2,6 +2,9 @@
 
 Art Tools is a compact Unity Editor toolkit for common art-production tasks.
 
+Version 1.2 adds a Missing Script checker with folder-scoped Prefab scanning,
+missing-node details, and one-click Prefab/node location from the unified hub.
+
 This repository is the maintained Unity Package Manager edition. The original
 `lishuo0617/ArtTools` repository remains an independent snapshot and is not used
 as the development remote for this package.
@@ -30,7 +33,7 @@ https://github.com/lishuo0617/ArtTools-UPM.git
 Pinned stable version:
 
 ```text
-https://github.com/lishuo0617/ArtTools-UPM.git#v1.1.0
+https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.0
 ```
 
 You can also add the dependency directly to `Packages/manifest.json`:
@@ -38,7 +41,7 @@ You can also add the dependency directly to `Packages/manifest.json`:
 ```json
 {
   "dependencies": {
-    "com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#v1.1.0"
+    "com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.0"
   }
 }
 ```
@@ -47,7 +50,7 @@ After installation, open `Art Tools > 美术工具中心`.
 
 ## Updating
 
-- Use a version tag such as `v1.1.0` for reproducible projects.
+- Use a version tag such as `v1.2.0` for reproducible projects.
 - Use the untagged Git URL to follow the latest `main` branch.
 - Package releases follow semantic versioning. Breaking changes increment the
   major version; new compatible tools increment the minor version; fixes

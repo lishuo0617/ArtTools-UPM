@@ -7,7 +7,7 @@ Open Unity Package Manager and select **Add package from git URL**.
 Use the stable version for production projects:
 
 ```text
-https://github.com/lishuo0617/ArtTools-UPM.git#v1.1.0
+https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.0
 ```
 
 Use the URL without a tag only when you intentionally want the latest changes
@@ -18,7 +18,7 @@ from `main`.
 Add this entry to the project's `Packages/manifest.json` dependencies:
 
 ```json
-"com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#v1.1.0"
+"com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.0"
 ```
 
 ## Removing
