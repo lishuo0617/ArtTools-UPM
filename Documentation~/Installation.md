@@ -4,22 +4,30 @@
 
 Open Unity Package Manager and select **Add package from git URL**.
 
-Use the stable version for production projects:
+Use the rolling stable channel when you want future verified releases to be
+available through Package Manager's **Update** button without changing the URL:
 
 ```text
-https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.0
+https://github.com/lishuo0617/ArtTools-UPM.git#stable
 ```
 
-Use the URL without a tag only when you intentionally want the latest changes
-from `main`.
+For projects that must remain on one exact release, use an immutable version
+tag such as `#v1.2.0`. The legacy video URL ending in `#v1.1.0` remains a
+supported rolling update channel and is promoted together with `stable`.
 
 ## Project manifest
 
 Add this entry to the project's `Packages/manifest.json` dependencies:
 
 ```json
-"com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.0"
+"com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#stable"
 ```
+
+## Updating
+
+Select **Art Tools** in Package Manager and click **Update**. Unity re-resolves
+the rolling channel and updates the package lock to the latest verified commit.
+Pinned version URLs do not jump between immutable version tags.
 
 ## Removing
 
