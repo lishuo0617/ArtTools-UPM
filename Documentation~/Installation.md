@@ -4,30 +4,29 @@
 
 Open Unity Package Manager and select **Add package from git URL**.
 
-Use the rolling stable channel when you want future verified releases to be
-available through Package Manager's **Update** button without changing the URL:
+Use the original rolling update URL:
 
 ```text
-https://github.com/lishuo0617/ArtTools-UPM.git#stable
+https://github.com/lishuo0617/ArtTools-UPM.git#v1.1.0
 ```
 
-For projects that must remain on one exact release, use an immutable version
-tag such as `#v1.2.1`. The legacy video URL ending in `#v1.1.0` remains a
-supported rolling update channel and is promoted together with `stable`.
+Keep this URL unchanged. The `v1.1.0` compatibility tag is promoted to every
+validated package release, allowing existing installations to use Package
+Manager's **Update** button without replacing the Git URL.
 
 ## Project manifest
 
 Add this entry to the project's `Packages/manifest.json` dependencies:
 
 ```json
-"com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#stable"
+"com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#v1.1.0"
 ```
 
 ## Updating
 
 Select **Art Tools** in Package Manager and click **Update**. Unity re-resolves
 the rolling channel and updates the package lock to the latest verified commit.
-Pinned version URLs do not jump between immutable version tags.
+Do not replace the installed Git URL with a newer version tag.
 
 ## Removing
 

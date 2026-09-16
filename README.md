@@ -22,27 +22,22 @@ as the development remote for this package.
 ## Install with Package Manager
 
 In Unity, open `Window > Package Manager`, choose `Add package from git URL`,
-and enter one of these URLs:
-
-Rolling stable channel (recommended when you want the Package Manager
-**Update** button to fetch future verified releases without changing the URL):
+and enter the original rolling update URL:
 
 ```text
-https://github.com/lishuo0617/ArtTools-UPM.git#stable
+https://github.com/lishuo0617/ArtTools-UPM.git#v1.1.0
 ```
 
-Pinned version (recommended when a project must stay fully reproducible):
-
-```text
-https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.1
-```
+Keep this URL unchanged. The `v1.1.0` compatibility tag is promoted to each
+validated package release so existing installations can update without
+replacing their Git URL.
 
 You can also add the dependency directly to `Packages/manifest.json`:
 
 ```json
 {
   "dependencies": {
-    "com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#stable"
+    "com.lishuo.arttools": "https://github.com/lishuo0617/ArtTools-UPM.git#v1.1.0"
   }
 }
 ```
@@ -51,12 +46,9 @@ After installation, open `Art Tools > 美术工具中心`.
 
 ## Updating
 
-- Use the `stable` channel and click **Update** in Package Manager to fetch the
-  latest release that passed package validation.
-- The legacy video URL ending in `#v1.1.0` remains a supported rolling update
-  channel for existing users. It is intentionally promoted with `stable`.
-- Use an immutable version tag such as `v1.2.1` for reproducible projects; a
-  version-pinned URL does not automatically jump to a different version tag.
+- Keep the original URL ending in `#v1.1.0` and click **Update** in Package
+  Manager to fetch the latest validated release.
+- Do not replace the installed Git URL with a newer version tag.
 - Package releases follow semantic versioning. Breaking changes increment the
   major version; new compatible tools increment the minor version; fixes
   increment the patch version.
