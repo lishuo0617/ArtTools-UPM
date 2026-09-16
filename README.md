@@ -34,7 +34,7 @@ https://github.com/lishuo0617/ArtTools-UPM.git#stable
 Pinned version (recommended when a project must stay fully reproducible):
 
 ```text
-https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.0
+https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.1
 ```
 
 You can also add the dependency directly to `Packages/manifest.json`:
@@ -55,7 +55,7 @@ After installation, open `Art Tools > 美术工具中心`.
   latest release that passed package validation.
 - The legacy video URL ending in `#v1.1.0` remains a supported rolling update
   channel for existing users. It is intentionally promoted with `stable`.
-- Use an immutable version tag such as `v1.2.0` for reproducible projects; a
+- Use an immutable version tag such as `v1.2.1` for reproducible projects; a
   version-pinned URL does not automatically jump to a different version tag.
 - Package releases follow semantic versioning. Breaking changes increment the
   major version; new compatible tools increment the minor version; fixes
