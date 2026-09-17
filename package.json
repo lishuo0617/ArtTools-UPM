@@ -1,6 +1,6 @@
 {
   "name": "com.lishuo.arttools",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "displayName": "Art Tools",
   "description": "A compact Unity Editor toolkit for common art-production workflows, Missing Script checks, material inspection and conversion, texture processing, naming, scene navigation, and smooth-normal baking.",
   "unity": "2018.4",
