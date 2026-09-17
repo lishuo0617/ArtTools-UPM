@@ -2,10 +2,6 @@
 
 All notable changes to this package are documented here.
 
-## [1.2.1] - 2026-09-16
-
-- Replaced the ambiguous X/Y captions on random rotation and scale ranges with explicit left-side `min` and right-side `max` labels.
-
 ## [1.2.0] - 2026-08-24
 
 - Added a Missing Script checker to the unified Art Tools hub.
