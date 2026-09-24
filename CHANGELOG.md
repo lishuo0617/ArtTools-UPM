@@ -2,6 +2,12 @@
 
 All notable changes to this package are documented here.
 
+## [1.2.2] - 2026-09-24
+
+- Preserved the selected output folder and sequence settings when entering Play mode.
+- Opened the output folder with the last exported frame selected when a sequence finishes.
+- Added a configurable shortcut for single-image capture.
+
 ## [1.2.1] - 2026-09-17
 
 - Integrated scene placement into the Decoration Tool generator workflow.
