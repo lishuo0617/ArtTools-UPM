@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 namespace ArtTools.EditorTools
 {
-    // Package Manager renders extension UI below its built-in package details.
+    // Keep the built-in Description section above this package's community panel.
     [InitializeOnLoad]
     internal sealed class ArtToolsPackageManagerCommunity : IPackageManagerExtension
     {
@@ -47,10 +47,11 @@ namespace ArtTools.EditorTools
             panel.Add(content);
 
             var copy = new VisualElement();
-            copy.style.flexGrow = 1;
+            copy.style.width = 220;
+            copy.style.flexGrow = 0;
             copy.style.flexShrink = 1;
             copy.style.minWidth = 180;
-            copy.style.marginRight = 16;
+            copy.style.marginRight = 8;
             content.Add(copy);
 
             AddLine(copy, "扫码加入交流群", 15, true);
@@ -62,8 +63,8 @@ namespace ArtTools.EditorTools
             if (qr != null)
             {
                 var image = new Image { image = qr, scaleMode = ScaleMode.ScaleToFit };
-                image.style.width = 300;
-                image.style.height = 375;
+                image.style.width = 270;
+                image.style.height = 300;
                 image.style.flexShrink = 0;
                 image.tooltip = "ArtTools QQ 交流群二维码，群号 1124864329";
                 content.Add(image);
@@ -74,6 +75,7 @@ namespace ArtTools.EditorTools
             }
 
             panel.RegisterCallback<GeometryChangedEvent>(OnPanelGeometryChanged);
+            panel.RegisterCallback<AttachToPanelEvent>(evt => UpdateHostOrder());
             panel.style.display = isArtToolsSelected ? DisplayStyle.Flex : DisplayStyle.None;
             return panel;
         }
@@ -106,6 +108,41 @@ namespace ArtTools.EditorTools
             if (panel != null)
             {
                 panel.style.display = isArtToolsSelected ? DisplayStyle.Flex : DisplayStyle.None;
+                UpdateHostOrder();
+            }
+        }
+
+        private void UpdateHostOrder()
+        {
+            if (panel == null || panel.parent == null)
+            {
+                return;
+            }
+
+            // The custom and built-in details are siblings in Unity's Package Manager.
+            // Check their names before changing the order so other layouts remain untouched.
+            var host = panel.parent;
+            var details = host.parent;
+            if (host.name != "detailCustomContainer" || details == null || details.name != "detail")
+            {
+                return;
+            }
+
+            VisualElement body = null;
+            VisualElement extension = null;
+            for (var i = 0; i < details.childCount; ++i)
+            {
+                if (details[i].name == "detailsBody") body = details[i];
+                if (details[i].name == "detailExtensionContainer") extension = details[i];
+            }
+
+            if (isArtToolsSelected && body != null)
+            {
+                host.PlaceInFront(body);
+            }
+            else if (!isArtToolsSelected && extension != null)
+            {
+                host.PlaceBehind(extension);
             }
         }
 
@@ -113,7 +150,7 @@ namespace ArtTools.EditorTools
         {
             if (content != null)
             {
-                content.style.flexDirection = evt.newRect.width < 600 ? FlexDirection.Column : FlexDirection.Row;
+                content.style.flexDirection = evt.newRect.width < 540 ? FlexDirection.Column : FlexDirection.Row;
             }
         }
 

@@ -2,6 +2,12 @@
 
 All notable changes to this package are documented here.
 
+## [1.2.4] - 2026-09-25
+
+- Moved the community panel below the built-in Package Manager description when its layout supports reordering.
+- Reduced the QR poster to a 270 × 300 display box beside a compact text column.
+- Reduced the GitHub README QR display width to 50% without changing the image file.
+
 ## [1.2.3] - 2026-09-25
 
 - Added the ArtTools QQ community QR image to the repository and Package Manager details extension.

@@ -1,6 +1,6 @@
 # Art Tools · Unity 美术工具箱
 
-![ArtTools QQ 交流群二维码](./QQ群二维码.png)
+<img src="./QQ群二维码.png" alt="ArtTools QQ 交流群二维码" width="50%">
 
 **扫码加入 ArtTools QQ 交流群，或搜索群号：1124864329。** 欢迎交流工具使用、反馈问题和提出功能建议。
 
@@ -27,7 +27,7 @@ https://github.com/lishuo0617/ArtTools-UPM.git#stable
 **固定版本**（适合需要锁定版本的项目）：
 
 ```text
-https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.3
+https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.4
 ```
 
 也可以在项目的 `Packages/manifest.json` 中加入：
@@ -46,7 +46,7 @@ https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.3
 
 - 使用 `#stable` 通道时，可以在 Package Manager 中点击 **Update** 获取最新的已验证版本。
 - 早期视频中的 `#v1.1.0` 地址仍作为旧用户的滚动更新通道，与 `stable` 一起推进。
-- `#v1.2.3` 这类正式版本标签用于锁定版本，不会自动跳转到其他版本标签。
+- `#v1.2.4` 这类正式版本标签用于锁定版本，不会自动跳转到其他版本标签。
 - 包遵循语义化版本：不兼容变更增加主版本号，兼容的新工具增加次版本号，修复增加修订号。
 
 ## 使用前提醒
