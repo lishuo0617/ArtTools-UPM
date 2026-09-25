@@ -66,6 +66,8 @@ namespace ArtTools.EditorTools
                 image.style.width = 270;
                 image.style.height = 300;
                 image.style.flexShrink = 0;
+                image.style.position = Position.Relative;
+                image.style.top = -20;
                 image.tooltip = "ArtTools QQ 交流群二维码，群号 1124864329";
                 content.Add(image);
             }

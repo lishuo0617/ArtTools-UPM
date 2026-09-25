@@ -2,6 +2,10 @@
 
 All notable changes to this package are documented here.
 
+## [1.2.5] - 2026-09-25
+
+- Moved only the Package Manager QQ poster image 20 pixels upward without changing its size or the surrounding text.
+
 ## [1.2.4] - 2026-09-25
 
 - Moved the community panel below the built-in Package Manager description when its layout supports reordering.

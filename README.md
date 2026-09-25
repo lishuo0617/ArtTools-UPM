@@ -27,7 +27,7 @@ https://github.com/lishuo0617/ArtTools-UPM.git#stable
 **固定版本**（适合需要锁定版本的项目）：
 
 ```text
-https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.4
+https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.5
 ```
 
 也可以在项目的 `Packages/manifest.json` 中加入：
@@ -46,7 +46,7 @@ https://github.com/lishuo0617/ArtTools-UPM.git#v1.2.4
 
 - 使用 `#stable` 通道时，可以在 Package Manager 中点击 **Update** 获取最新的已验证版本。
 - 早期视频中的 `#v1.1.0` 地址仍作为旧用户的滚动更新通道，与 `stable` 一起推进。
-- `#v1.2.4` 这类正式版本标签用于锁定版本，不会自动跳转到其他版本标签。
+- `#v1.2.5` 这类正式版本标签用于锁定版本，不会自动跳转到其他版本标签。
 - 包遵循语义化版本：不兼容变更增加主版本号，兼容的新工具增加次版本号，修复增加修订号。
 
 ## 使用前提醒

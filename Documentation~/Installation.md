@@ -12,7 +12,7 @@ https://github.com/lishuo0617/ArtTools-UPM.git#stable
 ```
 
 For projects that must remain on one exact release, use an immutable version
-tag such as `#v1.2.4`. The legacy video URL ending in `#v1.1.0` remains a
+tag such as `#v1.2.5`. The legacy video URL ending in `#v1.1.0` remains a
 supported rolling update channel and is promoted together with `stable`.
 
 ## Project manifest
