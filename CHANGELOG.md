@@ -5,6 +5,7 @@ All notable changes to this package are documented here.
 ## [1.2.5] - 2026-09-25
 
 - Moved only the Package Manager QQ poster image 20 pixels upward without changing its size or the surrounding text.
+- Placed the community text directly under its heading and shifted the poster 40 pixels right and another 20 pixels up.
 
 ## [1.2.4] - 2026-09-25
 

@@ -43,7 +43,7 @@ namespace ArtTools.EditorTools
 
             content = new VisualElement();
             content.style.flexDirection = FlexDirection.Row;
-            content.style.alignItems = Align.Center;
+            content.style.alignItems = Align.FlexStart;
             panel.Add(content);
 
             var copy = new VisualElement();
@@ -67,7 +67,8 @@ namespace ArtTools.EditorTools
                 image.style.height = 300;
                 image.style.flexShrink = 0;
                 image.style.position = Position.Relative;
-                image.style.top = -20;
+                image.style.left = 40;
+                image.style.top = -40;
                 image.tooltip = "ArtTools QQ 交流群二维码，群号 1124864329";
                 content.Add(image);
             }
