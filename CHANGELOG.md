@@ -2,6 +2,11 @@
 
 All notable changes to this package are documented here.
 
+## [1.2.3] - 2026-09-25
+
+- Added the ArtTools QQ community QR image to the repository and Package Manager details extension.
+- Added Chinese package description and Chinese installation and update guidance in the README.
+
 ## [1.2.2] - 2026-09-24
 
 - Preserved the selected output folder and sequence settings when entering Play mode.

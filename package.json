@@ -1,8 +1,8 @@
 {
   "name": "com.lishuo.arttools",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "displayName": "Art Tools",
-  "description": "A compact Unity Editor toolkit for common art-production workflows, Missing Script checks, material inspection and conversion, texture processing, naming, scene navigation, and smooth-normal baking.",
+  "description": "Unity 美术制作工具箱：截图与序列图导出、贴图检查、资源整理、批量命名、Missing Script 检查、材质转换与场景工具。欢迎加入 ArtTools QQ 交流群，群号 1124864329；在包详情下方可查看二维码。",
   "unity": "2018.4",
   "dependencies": {
     "com.unity.modules.imageconversion": "1.0.0"
